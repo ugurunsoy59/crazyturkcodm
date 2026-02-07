@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrazyTurkCodM | Resmi Site</title>
+  <meta name="description" content="CrazyTurkCodM — COD Mobile rank, meta silahlar, canlı yayınlar ve efsane klipler." />
+
+  <!-- CT Logo (dosya adı ct-logo.png olmalı) -->
+  <link rel="icon" type="image/png" href="ct-logo.png" />
+
+  <style>
+    :root{
+      --bg:#0b0b0f; --card:#141420; --text:#f2f2f2; --muted:#b8b8c7;
+      --accent:#ffb000; --accent2:#ff3b3b; --line:rgba(255,255,255,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(255,176,0,.25), transparent 60%),
+                  radial-gradient(1000px 600px at 80% 10%, rgba(255,59,59,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 16px 70px}
+
+    header{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:22px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand h1{font-size:18px; margin:0}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13px}
+
+    .ctBadge{
+      width:44px;height:44px;border-radius:12px;overflow:hidden;
+      border:1px solid rgba(255,176,0,.35);
+      box-shadow:0 14px 30px rgba(255,176,0,.18);
+      background:#111;
+      flex:0 0 auto;
+    }
+    .ctBadge img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      padding:10px 12px; border:1px solid var(--line); border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+
+    /* Sağ üst sabit CT logo */
+    .ctFloating{
+      position:fixed; right:14px; top:14px; z-index:99;
+      width:54px; height:54px; border-radius:14px; overflow:hidden;
+      border:1px solid rgba(255,176,0,.35);
+      background:rgba(0,0,0,.35);
+      box-shadow:0 18px 38px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+    }
+    .ctFloating img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .hero{
+      border:1px solid var(--line); border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      padding:22px; display:grid; grid-template-columns:1.2fr .8fr; gap:18px;
+      overflow:hidden; position:relative;
+    }
+    .hero:after{
+      content:""; position:absolute; inset:-60px -60px auto auto; width:220px; height:220px;
+      background:radial-gradient(circle at 30% 30%, rgba(255,176,0,.45), transparent 60%);
+      filter:blur(6px);
+      transform:rotate(18deg);
+    }
+    .hero h2{margin:0 0 8px; font-size:34px; letter-spacing:.2px}
+    .hero p{margin:0 0 16px; color:var(--muted); line-height:1.5}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      padding:12px 14px; border-radius:14px; border:1px solid var(--line);
+      display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.04);
+      font-weight:800;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),#ffd36a);
+      color:#1a1300; border-color:rgba(255,176,0,.35);
+    }
+    .btn.danger{
+      background:linear-gradient(135deg,var(--accent2),#ff7b7b);
+      color:#160000; border-color:rgba(255,59,59,.35);
+    }
+
+    .cardCol{display:grid; gap:10px}
+    .stat{
+      border:1px solid var(--line); border-radius:16px; padding:14px;
+      background:rgba(20,20,32,.6);
+    }
+    .stat .k{color:var(--muted); font-size:12px}
+    .stat .v{font-size:18px; font-weight:900; margin-top:6px}
+
+    section{margin-top:22px}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .card{
+      border:1px solid var(--line); border-radius:var(--radius);
+      background:rgba(20,20,32,.55);
+      overflow:hidden;
+    }
+    .card .pad{padding:14px}
+    .title{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px}
+    .title h3{margin:0; font-size:16px}
+    .muted{color:var(--muted)}
+    iframe{width:100%; aspect-ratio:16/9; border:0; display:block; background:#000}
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    footer{margin-top:28px; color:var(--muted); font-size:13px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .hero h2{font-size:28px}
+      .ctFloating{width:48px;height:48px}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sağ üst sabit CT logo -->
+  <a class="ctFloating" href="https://youtube.com/@crazyturkcodm?si=hHxijVcYfd2re_Ei" target="_blank" title="CrazyTurkCodM">
+    <img src="ct-logo.png" alt="CT Logo">
+  </a>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="ctBadge"><img src="ct-logo.png" alt="CT Logo"></div>
+        <div>
+          <h1>CrazyTurkCodM</h1>
+          <p>COD Mobile • Rank • Meta • Canlı Yayın</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="pill" href="#videolar">Videolar</a>
+        <a class="pill" href="#shorts">Shorts</a>
+        <a class="pill" href="#canli">Canlı</a>
+        <a class="pill" href="#iletisim">İletişim</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h2>Rank’te EZEN içerikler burada! 🔥</h2>
+        <p>
+          Meta silahlar, rank taktikleri, canlı yayın “Abone ol çarkı” görevleri ve efsane klipler.
+          Yeni videoları kaçırmamak için kanala göz at.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="https://youtube.com/@crazyturkcodm?si=hHxijVcYfd2re_Ei" target="_blank">✅ Kanala Git / Abone Ol</a>
+          <!-- İstersen sonra doldur -->
+          <a class="btn" href="https://instagram.com/" target="_blank">📸 Instagram</a>
+          <a class="btn danger" href="#canli">🔴 Canlı Yayın</a>
+        </div>
+      </div>
+
+      <div class="cardCol">
+        <div class="stat">
+          <div class="k">Bu hafta hedef</div>
+          <div class="v">3 Video + 5 Shorts</div>
+        </div>
+        <div class="stat">
+          <div class="k">İçerik</div>
+          <div class="v">Meta • Rank • Bot Troll</div>
+        </div>
+        <div class="stat">
+          <div class="k">Seri</div>
+          <div class="v">“Abone Ol Çarkı”</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="videolar">
+      <div class="title">
+        <h3>Son Videolar</h3>
+        <span class="muted">YouTube embed</span>
+      </div>
+
+      <div class="grid">
+        <!-- Video ID’lerini değiştir: https://youtu.be/VIDEOID -->
+        <div class="card">
+          <iframe src="https://www.youtube.com/embed/VIDEOID1" allowfullscreen></iframe>
+          <div class="pad"><b>Video 1</b><div class="muted">Kısa açıklama</div></div>
+        </div>
+        <div class="card">
+          <iframe src="https://www.youtube.com/embed/VIDEOID2" allowfullscreen></iframe>
+          <div class="pad"><b>Video 2</b><div class="muted">Kısa açıklama</div></div>
+        </div>
+        <div class="card">
+          <iframe src="https://www.youtube.com/embed/VIDEOID3" allowfullscreen></iframe>
+          <div class="pad"><b>Video 3</b><div class="muted">Kısa açıklama</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shorts">
+      <div class="title">
+        <h3>Shorts</h3>
+        <span class="muted">En iyi klipler</span>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <iframe src="https://www.youtube.com/embed/SHORTSID1" allowfullscreen></iframe>
+          <div class="pad"><b>Short 1</b><div class="muted">Klip başlığı</div></div>
+        </div>
+        <div class="card">
+          <iframe src="https://www.youtube.com/embed/SHORTSID2" allowfullscreen></iframe>
+          <div class="pad"><b>Short 2</b><div class="muted">Klip başlığı</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="canli">
+      <div class="title">
+        <h3>Canlı Yayın</h3>
+        <span class="muted">“Abone ol → çarkı çevir → görev”</span>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <b>Yayın akışı</b>
+          <div class="muted" style="margin-top:6px; line-height:1.6">
+            ✅ Abone olunca ekranda uyarı + ses efekti<br/>
+            🎡 Çarkı çeviriyoruz, çıkan görevi yapıyoruz<br/>
+            🎮 Rank maçları + izleyici görevleri<br/>
+            💬 Sohbet aktif, en iyi anları Shorts’a atıyoruz
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim">
+      <div class="title">
+        <h3>İletişim</h3>
+        <span class="muted">İş birliği / sponsorluk</span>
+      </div>
+      <div class="card">
+        <div class="pad">
+          <div class="muted">Mail:</div>
+          <b>mail@ornek.com</b>
+          <div class="muted" style="margin-top:10px">Sosyal:</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+            <a class="btn" href="https://instagram.com/" target="_blank">Instagram</a>
+            <a class="btn" href="https://tiktok.com/" target="_blank">TikTok</a>
+            <a class="btn" href="https://discord.gg/" target="_blank">Discord</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> CrazyTurkCodM • Tüm hakları saklıdır.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
